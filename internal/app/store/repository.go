@@ -11,3 +11,11 @@ type UserRepository interface {
 	FindAll() (*[]models.User, error)
 	DeleteById(int) error
 }
+
+type PostRepository interface {
+	Create(post *models.Post) error
+	FindAllByUserId(int) (*[]models.Post, error)
+	FindAll() (*[]models.Post, error)
+	FindById(int) (*models.Post, error)
+	DeleteById(int) error
+}
